@@ -36,7 +36,7 @@ int main(int argc, const char * argv[]) {
 
 void initCar(){
     printf("initCar\n");
-    wiringPiSetup()
+    wiringPiSetup();
     
     // L298N PWM
     softPwmCreate (EN_A ,0, 100);
