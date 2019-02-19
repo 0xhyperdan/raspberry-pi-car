@@ -27,6 +27,7 @@
 		96B98E3B221B887900D17C35 /* car.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = car.c; sourceTree = "<group>"; };
 		96B98E47221B8AD200D17C35 /* liblib.dylib */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.dylib"; path = liblib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98E4C221BF31900D17C35 /* car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
+		96F6B6F1221C004C00424D91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				96B98E3B221B887900D17C35 /* car.c */,
+				96F6B6F1221C004C00424D91 /* README.md */,
 				96B98E4C221BF31900D17C35 /* car.h */,
 			);
 			path = "raspberry-pi-car";
