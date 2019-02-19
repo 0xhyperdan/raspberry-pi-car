@@ -1,0 +1,112 @@
+//
+//  car.c
+//  raspberry-pi-car
+//
+//  Created by 丛晓丹 on 2019/2/19.
+//  Copyright © 2019 丛晓丹. All rights reserved.
+//
+
+# include <car.h>
+
+int main(int argc, const char * argv[]) {
+    initCar();
+    char input;
+    for (;;) {
+        scanf("%c" ,&input);
+        switch (input) {
+            case 'w': // forward
+                forward();
+                break;
+            case 'a': // left
+                left();
+                break;
+            case 'd': // right
+                right();
+                break;
+            case 's': // stop
+                stop();
+                break;
+            default:
+                break;
+        }
+    }
+    return EXIT;
+}
+
+void initCar(){
+    if (wiringPiSetup() == -1) {
+        exit(1);
+    }
+    // L298N PWM
+    softPwmCreate (EN_A ,0, 100);
+    softPwmCreate (EN_B ,0, 100);
+    // Motor
+    pinMode(IN_1, OUTPUT);
+    digitalWrite(IN_1, LOW);
+    pinMode(IN_2, OUTPUT);
+    digitalWrite(IN_2, LOW);
+    pinMode(IN_3, OUTPUT);
+    digitalWrite(IN_3, LOW);
+    pinMode(IN_4, OUTPUT);
+    digitalWrite(IN_4, LOW)
+}
+
+void forward(){
+    // pwm
+    softPwmWrite(EN_A, 100);
+    softPwmWrite(EN_B, 100);
+    // left
+    gigitalWrite(IN_1, HIGH);
+    gigitalWrite(IN_2, HIGH);
+    // right
+    gigitalWrite(IN_3, HEIGHT);
+    gigitalWrite(IN_4, LOW);
+}
+
+void right(){
+    // pwm
+    softPwmWrite(EN_A, 60);
+    softPwmWrite(EN_B, 30);
+    // left
+    gigitalWrite(IN_1, HIGH);
+    gigitalWrite(IN_2, HIGH);
+    // right
+    gigitalWrite(IN_3, LOW);
+    gigitalWrite(IN_4, HIGH);
+}
+
+void left(){
+    // pwm
+    softPwmWrite(EN_A, 30);
+    softPwmWrite(EN_B, 60);
+    // left
+    gigitalWrite(IN_1, LOW);
+    gigitalWrite(IN_2, HIGH);
+    // right
+    gigitalWrite(IN_3, HIGH);
+    gigitalWrite(IN_4, LOW);
+}
+
+void back(){
+    // pwm
+    softPwmWrite(EN_A, 50);
+    softPwmWrite(EN_B, 50);
+    // left
+    gigitalWrite(IN_1, LOW);
+    gigitalWrite(IN_2, HIGH);
+    // right
+    gigitalWrite(IN_3, LOW);
+    gigitalWrite(IN_4, HIGH);
+}
+
+void stop(){
+    // pwm
+    softPwmWrite(EN_A, 0);
+    softPwmWrite(EN_B, 0);
+    // left
+    gigitalWrite(IN_1, LOW);
+    gigitalWrite(IN_2, LOW);
+    // right
+    gigitalWrite(IN_3, LOW);
+    gigitalWrite(IN_4, LOW);
+}
