@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     char input;
     for (;;) {
         scanf("%c", &input);
-        printf("input commond :%c", input);
+        printf("input commond :%c\n", input);
         switch (input) {
             case 'w': // forward
                 forward();
@@ -35,9 +35,9 @@ int main(int argc, const char * argv[]) {
 }
 
 void initCar(){
-    if (wiringPiSetup() == -1) {
-        exit(1);
-    }
+    printf("initCar\n");
+    wiringPiSetup()
+    
     // L298N PWM
     softPwmCreate (EN_A ,0, 100);
     softPwmCreate (EN_B ,0, 100);
@@ -53,7 +53,7 @@ void initCar(){
 }
 
 void forward(){
-    printf("forward");
+    printf("forward\n");
     // pwm
     softPwmWrite(EN_A, 100);
     softPwmWrite(EN_B, 100);
@@ -66,7 +66,7 @@ void forward(){
 }
 
 void right(){
-    printf("right");
+    printf("right\n");
     // pwm
     softPwmWrite(EN_A, 60);
     softPwmWrite(EN_B, 30);
@@ -79,7 +79,7 @@ void right(){
 }
 
 void left(){
-    printf("left");
+    printf("left\n");
     // pwm
     softPwmWrite(EN_A, 30);
     softPwmWrite(EN_B, 60);
@@ -92,7 +92,7 @@ void left(){
 }
 
 void back(){
-    printf("back");
+    printf("back\n");
     // pwm
     softPwmWrite(EN_A, 50);
     softPwmWrite(EN_B, 50);
@@ -105,7 +105,7 @@ void back(){
 }
 
 void stop(){
-    printf("stop");
+    printf("stop\n");
     // pwm
     softPwmWrite(EN_A, 0);
     softPwmWrite(EN_B, 0);
