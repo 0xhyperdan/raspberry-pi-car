@@ -17,7 +17,7 @@
 #define IN_3 2
 #define IN_4 3
 
-#define EXIT 0
+//#define EXIT 0
 
 #include <stdio.h>
 #include <stdlib.h>

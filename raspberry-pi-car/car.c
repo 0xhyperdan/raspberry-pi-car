@@ -8,7 +8,7 @@
 
 #include "car.h"
 
-int main(int argc, const char * argv[]) {
+int main(void) {
     initCar();
     char input;
     for (;;) {
@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
                 break;
         }
     }
-    return EXIT;
+    return 0;
 }
 
 void initCar(){
@@ -39,8 +39,8 @@ void initCar(){
     wiringPiSetup();
     
     // L298N PWM
-    softPwmCreate (EN_A ,0, 100);
-    softPwmCreate (EN_B ,0, 100);
+//    softPwmCreate (EN_A ,0, 100);
+//    softPwmCreate (EN_B ,0, 100);
     // Motor
     pinMode(IN_1, OUTPUT);
     digitalWrite(IN_1, LOW);
@@ -55,8 +55,8 @@ void initCar(){
 void forward(){
     printf("forward\n");
     // pwm
-    softPwmWrite(EN_A, 100);
-    softPwmWrite(EN_B, 100);
+//    softPwmWrite(EN_A, 100);
+//    softPwmWrite(EN_B, 100);
     // left
     digitalWrite(IN_1, HIGH);
     digitalWrite(IN_2, HIGH);
@@ -68,8 +68,8 @@ void forward(){
 void right(){
     printf("right\n");
     // pwm
-    softPwmWrite(EN_A, 60);
-    softPwmWrite(EN_B, 30);
+//    softPwmWrite(EN_A, 60);
+//    softPwmWrite(EN_B, 30);
     // left
     digitalWrite(IN_1, HIGH);
     digitalWrite(IN_2, HIGH);
@@ -81,8 +81,8 @@ void right(){
 void left(){
     printf("left\n");
     // pwm
-    softPwmWrite(EN_A, 30);
-    softPwmWrite(EN_B, 60);
+//    softPwmWrite(EN_A, 30);
+//    softPwmWrite(EN_B, 60);
     // left
     digitalWrite(IN_1, LOW);
     digitalWrite(IN_2, HIGH);
@@ -94,8 +94,8 @@ void left(){
 void back(){
     printf("back\n");
     // pwm
-    softPwmWrite(EN_A, 50);
-    softPwmWrite(EN_B, 50);
+//    softPwmWrite(EN_A, 50);
+//    softPwmWrite(EN_B, 50);
     // left
     digitalWrite(IN_1, LOW);
     digitalWrite(IN_2, HIGH);
@@ -107,8 +107,8 @@ void back(){
 void stop(){
     printf("stop\n");
     // pwm
-    softPwmWrite(EN_A, 0);
-    softPwmWrite(EN_B, 0);
+//    softPwmWrite(EN_A, 0);
+//    softPwmWrite(EN_B, 0);
     // left
     digitalWrite(IN_1, LOW);
     digitalWrite(IN_2, LOW);
