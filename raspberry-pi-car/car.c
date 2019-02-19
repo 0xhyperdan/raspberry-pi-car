@@ -59,7 +59,7 @@ void forward(){
     gigitalWrite(IN_1, HIGH);
     gigitalWrite(IN_2, HIGH);
     // right
-    gigitalWrite(IN_3, HEIGHT);
+    gigitalWrite(IN_3, HIGH);
     gigitalWrite(IN_4, LOW);
 }
 
