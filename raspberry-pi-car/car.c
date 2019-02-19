@@ -56,11 +56,11 @@ void forward(){
     softPwmWrite(EN_A, 100);
     softPwmWrite(EN_B, 100);
     // left
-    gigitalWrite(IN_1, HIGH);
-    gigitalWrite(IN_2, HIGH);
+    digitalWrite(IN_1, HIGH);
+    digitalWrite(IN_2, HIGH);
     // right
-    gigitalWrite(IN_3, HIGH);
-    gigitalWrite(IN_4, LOW);
+    digitalWrite(IN_3, HIGH);
+    digitalWrite(IN_4, LOW);
 }
 
 void right(){
@@ -68,11 +68,11 @@ void right(){
     softPwmWrite(EN_A, 60);
     softPwmWrite(EN_B, 30);
     // left
-    gigitalWrite(IN_1, HIGH);
-    gigitalWrite(IN_2, HIGH);
+    digitalWrite(IN_1, HIGH);
+    digitalWrite(IN_2, HIGH);
     // right
-    gigitalWrite(IN_3, LOW);
-    gigitalWrite(IN_4, HIGH);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_4, HIGH);
 }
 
 void left(){
@@ -80,11 +80,11 @@ void left(){
     softPwmWrite(EN_A, 30);
     softPwmWrite(EN_B, 60);
     // left
-    gigitalWrite(IN_1, LOW);
-    gigitalWrite(IN_2, HIGH);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_2, HIGH);
     // right
-    gigitalWrite(IN_3, HIGH);
-    gigitalWrite(IN_4, LOW);
+    digitalWrite(IN_3, HIGH);
+    digitalWrite(IN_4, LOW);
 }
 
 void back(){
@@ -92,11 +92,11 @@ void back(){
     softPwmWrite(EN_A, 50);
     softPwmWrite(EN_B, 50);
     // left
-    gigitalWrite(IN_1, LOW);
-    gigitalWrite(IN_2, HIGH);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_2, HIGH);
     // right
-    gigitalWrite(IN_3, LOW);
-    gigitalWrite(IN_4, HIGH);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_4, HIGH);
 }
 
 void stop(){
@@ -104,9 +104,9 @@ void stop(){
     softPwmWrite(EN_A, 0);
     softPwmWrite(EN_B, 0);
     // left
-    gigitalWrite(IN_1, LOW);
-    gigitalWrite(IN_2, LOW);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_2, LOW);
     // right
-    gigitalWrite(IN_3, LOW);
-    gigitalWrite(IN_4, LOW);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_4, LOW);
 }
