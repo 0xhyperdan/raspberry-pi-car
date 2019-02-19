@@ -48,7 +48,7 @@ void initCar(){
     pinMode(IN_3, OUTPUT);
     digitalWrite(IN_3, LOW);
     pinMode(IN_4, OUTPUT);
-    digitalWrite(IN_4, LOW)
+    digitalWrite(IN_4, LOW);
 }
 
 void forward(){
