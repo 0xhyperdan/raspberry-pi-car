@@ -59,7 +59,7 @@ void forward(){
 //    softPwmWrite(EN_B, 100);
     // left
     digitalWrite(IN_1, HIGH);
-    digitalWrite(IN_2, HIGH);
+    digitalWrite(IN_2, LOW);
     // right
     digitalWrite(IN_3, HIGH);
     digitalWrite(IN_4, LOW);
@@ -72,7 +72,7 @@ void right(){
 //    softPwmWrite(EN_B, 30);
     // left
     digitalWrite(IN_1, HIGH);
-    digitalWrite(IN_2, HIGH);
+    digitalWrite(IN_2, LOW);
     // right
     digitalWrite(IN_3, LOW);
     digitalWrite(IN_4, HIGH);
