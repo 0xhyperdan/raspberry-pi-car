@@ -12,7 +12,8 @@ int main(int argc, const char * argv[]) {
     initCar();
     char input;
     for (;;) {
-        scanf("%c" ,&input);
+        scanf("%c", &input);
+        printf("input commond :%c", input);
         switch (input) {
             case 'w': // forward
                 forward();
@@ -52,6 +53,7 @@ void initCar(){
 }
 
 void forward(){
+    printf("forward");
     // pwm
     softPwmWrite(EN_A, 100);
     softPwmWrite(EN_B, 100);
@@ -64,6 +66,7 @@ void forward(){
 }
 
 void right(){
+    printf("right");
     // pwm
     softPwmWrite(EN_A, 60);
     softPwmWrite(EN_B, 30);
@@ -76,6 +79,7 @@ void right(){
 }
 
 void left(){
+    printf("left");
     // pwm
     softPwmWrite(EN_A, 30);
     softPwmWrite(EN_B, 60);
@@ -88,6 +92,7 @@ void left(){
 }
 
 void back(){
+    printf("back");
     // pwm
     softPwmWrite(EN_A, 50);
     softPwmWrite(EN_B, 50);
@@ -100,6 +105,7 @@ void back(){
 }
 
 void stop(){
+    printf("stop");
     // pwm
     softPwmWrite(EN_A, 0);
     softPwmWrite(EN_B, 0);
