@@ -35,3 +35,5 @@ void left(void);
 void right(void);
 // 停车
 void stop(void);
+// 初始化
+void initCar(void);
