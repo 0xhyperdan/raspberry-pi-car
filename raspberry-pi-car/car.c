@@ -11,21 +11,25 @@
 int main(void) {
     initCar();
     char input;
-    for (;;) {
+    while (TRUE) {
         scanf("%c", &input);
         printf("input commond :%c\n", input);
         switch (input) {
             case 'w': // forward
+                stop();
                 forward();
                 break;
             case 'a': // left
+                stop();
                 left();
                 break;
             case 'd': // right
+                stop();
                 right();
                 break;
             case 's': // stop
                 stop();
+                back();
                 break;
             default:
                 break;
@@ -43,12 +47,13 @@ void initCar(){
 //    softPwmCreate (EN_B ,0, 100);
     // Motor
     pinMode(IN_1, OUTPUT);
-    digitalWrite(IN_1, LOW);
     pinMode(IN_2, OUTPUT);
-    digitalWrite(IN_2, LOW);
     pinMode(IN_3, OUTPUT);
-    digitalWrite(IN_3, LOW);
     pinMode(IN_4, OUTPUT);
+    // defaule
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_2, LOW);
+    digitalWrite(IN_3, LOW);
     digitalWrite(IN_4, LOW);
 }
 
