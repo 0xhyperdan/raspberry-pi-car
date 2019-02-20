@@ -27,9 +27,12 @@ int main(void) {
                 stop();
                 right();
                 break;
-            case 's': // stop
+            case 's': // back
                 stop();
                 back();
+                break;
+            case 'p': // stop
+                stop();
                 break;
             default:
                 break;
