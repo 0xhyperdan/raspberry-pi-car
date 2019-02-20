@@ -35,6 +35,7 @@ int main(void) {
                 stop();
                 break;
             default:
+                stop();
                 break;
         }
     }
