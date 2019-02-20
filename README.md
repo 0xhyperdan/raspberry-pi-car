@@ -5,6 +5,8 @@
 
 ![circuit diagram](/RaspberryCar_bb.png)
 
+* NOTE: raspberry pi GND must be connect L298N GND interface. 
+
 ## Build
 
 1. git clone this repo
