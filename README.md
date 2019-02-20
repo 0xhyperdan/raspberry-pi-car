@@ -1,6 +1,10 @@
 # raspberry-pi-car
 🏎🚗 树莓派小车(use wiringPi)
 
+## Circuit diagram
+
+![circuit diagram](RaspberryCar_bb.png)
+
 ## Build
 
 1. git clone this repo

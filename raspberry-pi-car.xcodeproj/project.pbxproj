@@ -29,6 +29,8 @@
 		96B98E4C221BF31900D17C35 /* car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 		96F6B6F1221C004C00424D91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96F6B6F2221D04F700424D91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		96F6B6F3221D839200424D91 /* RaspberryCar_bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RaspberryCar_bb.png; path = ../../Desktop/RaspberryCar_bb.png; sourceTree = "<group>"; };
+		96F6B6F4221D839200424D91 /* RaspberryCar.fzz */ = {isa = PBXFileReference; lastKnownFileType = file; name = RaspberryCar.fzz; path = ../../Desktop/RaspberryCar.fzz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,8 @@
 		96B98E2F221B887900D17C35 = {
 			isa = PBXGroup;
 			children = (
+				96F6B6F3221D839200424D91 /* RaspberryCar_bb.png */,
+				96F6B6F4221D839200424D91 /* RaspberryCar.fzz */,
 				96F6B6F2221D04F700424D91 /* .gitignore */,
 				96F6B6F1221C004C00424D91 /* README.md */,
 				96B98E3A221B887900D17C35 /* raspberry-pi-car */,
