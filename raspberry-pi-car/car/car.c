@@ -31,7 +31,7 @@ int main(void) {
                 stop();
                 back();
                 break;
-            case STOP // stop
+            case STOP: // stop
                 stop();
                 break;
             default:
