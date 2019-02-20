@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		96B98E3C221B887900D17C35 /* car.c in Sources */ = {isa = PBXBuildFile; fileRef = 96B98E3B221B887900D17C35 /* car.c */; };
+		96F6B6FC221D86B800424D91 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 96F6B6F9221D86B800424D91 /* server.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,9 +29,11 @@
 		96B98E47221B8AD200D17C35 /* liblib.dylib */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.dylib"; path = liblib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98E4C221BF31900D17C35 /* car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 		96F6B6F1221C004C00424D91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		96F6B6F2221D04F700424D91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		96F6B6F3221D839200424D91 /* RaspberryCar_bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RaspberryCar_bb.png; path = ../../Desktop/RaspberryCar_bb.png; sourceTree = "<group>"; };
-		96F6B6F4221D839200424D91 /* RaspberryCar.fzz */ = {isa = PBXFileReference; lastKnownFileType = file; name = RaspberryCar.fzz; path = ../../Desktop/RaspberryCar.fzz; sourceTree = "<group>"; };
+		96F6B6F9221D86B800424D91 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = server.c; path = ../../../socket/socket/server.c; sourceTree = "<group>"; };
+		96F6B700221D880000424D91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = "raspberry-pi-car/.gitignore"; sourceTree = "<group>"; };
+		96F6B701221D881500424D91 /* raspberry-pi-car.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "raspberry-pi-car.xcodeproj"; sourceTree = "<group>"; };
+		96F6B704221D881E00424D91 /* RaspberryCar_bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaspberryCar_bb.png; sourceTree = "<group>"; };
+		96F6B705221D881E00424D91 /* RaspberryCar.fzz */ = {isa = PBXFileReference; lastKnownFileType = file; path = RaspberryCar.fzz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +57,10 @@
 		96B98E2F221B887900D17C35 = {
 			isa = PBXGroup;
 			children = (
-				96F6B6F3221D839200424D91 /* RaspberryCar_bb.png */,
-				96F6B6F4221D839200424D91 /* RaspberryCar.fzz */,
-				96F6B6F2221D04F700424D91 /* .gitignore */,
+				96F6B704221D881E00424D91 /* RaspberryCar_bb.png */,
+				96F6B705221D881E00424D91 /* RaspberryCar.fzz */,
+				96F6B700221D880000424D91 /* .gitignore */,
+				96F6B701221D881500424D91 /* raspberry-pi-car.xcodeproj */,
 				96F6B6F1221C004C00424D91 /* README.md */,
 				96B98E3A221B887900D17C35 /* raspberry-pi-car */,
 				96B98E39221B887900D17C35 /* Products */,
@@ -75,10 +79,32 @@
 		96B98E3A221B887900D17C35 /* raspberry-pi-car */ = {
 			isa = PBXGroup;
 			children = (
+				96F6B6F8221D869900424D91 /* net */,
+				96F6B6F7221D866000424D91 /* car */,
+			);
+			path = "raspberry-pi-car";
+			sourceTree = "<group>";
+		};
+		96F6B6F7221D866000424D91 /* car */ = {
+			isa = PBXGroup;
+			children = (
 				96B98E3B221B887900D17C35 /* car.c */,
 				96B98E4C221BF31900D17C35 /* car.h */,
 			);
-			path = "raspberry-pi-car";
+			path = car;
+			sourceTree = "<group>";
+		};
+		96F6B6F8221D869900424D91 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				96F6B6F9221D86B800424D91 /* server.c */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		96F6B702221D881500424D91 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +181,12 @@
 			mainGroup = 96B98E2F221B887900D17C35;
 			productRefGroup = 96B98E39221B887900D17C35 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96F6B702221D881500424D91 /* Products */;
+					ProjectRef = 96F6B701221D881500424D91 /* raspberry-pi-car.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				96B98E37221B887900D17C35 /* raspberry-pi-car */,
@@ -168,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F6B6FC221D86B800424D91 /* server.c in Sources */,
 				96B98E3C221B887900D17C35 /* car.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

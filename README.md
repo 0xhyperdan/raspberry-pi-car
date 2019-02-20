@@ -3,7 +3,7 @@
 
 ## Circuit diagram
 
-![circuit diagram](RaspberryCar_bb.png)
+![circuit diagram](/RaspberryCar_bb.png)
 
 ## Build
 
