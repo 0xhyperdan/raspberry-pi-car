@@ -10,28 +10,28 @@
 
 int main(void) {
     initCar();
-    char input;
+    int input;
     for (;;) {
-        scanf("%c", &input);
+        input = scanInput();
         printf("input commond :%c\n", input);
         switch (input) {
-            case 'w': // forward
+            case FORWARD: // forward
                 stop();
                 forward();
                 break;
-            case 'a': // left
+            case LEFT: // left
                 stop();
                 left();
                 break;
-            case 'd': // right
+            case RIGHT: // right
                 stop();
                 right();
                 break;
-            case 's': // back
+            case BACK: // back
                 stop();
                 back();
                 break;
-            case 'p': // stop
+            case STOP // stop
                 stop();
                 break;
             default:
@@ -123,4 +123,22 @@ void stop(){
     // right
     digitalWrite(IN_3, LOW);
     digitalWrite(IN_4, LOW);
+}
+
+int scanInput(){
+    int in;
+    struct termios new_settings;
+    struct termios stored_settings;
+    tcgetattr(0, &stored_settings);
+    new_settings = stored_settings;
+    new_settings.c_lflag &= (~ICANON);
+    new_settings.c_cc[VTIME] = 0;
+    tcgetattr(0, &stored_settings);
+    new_settings.c_cc[VMIN] = 1;
+    tcsetattr(0, TCSANOW, &new_settings);
+    
+    in = getchar();
+    
+    tcsetattr(0, TCSANOW, &stored_settings);
+    return in;
 }
