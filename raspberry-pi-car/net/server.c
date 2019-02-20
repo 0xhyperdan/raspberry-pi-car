@@ -13,7 +13,7 @@
 #define PORT 7891
 #define HOST "127.0.0.1"
 int main(){
-    initCar();
+    
     int welcomeSocket, newSocket;
     char buffer[1024];
     char input;
