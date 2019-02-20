@@ -8,6 +8,6 @@
 3. run commond  `cc -o car car.c -lwiringPi -lpthread`
 4. run commond  `sudo ./car`
 
-* note: your raspberry pi has the wiringPi library installed.
+* NOTE: your raspberry pi has the wiringPi library installed.
 
 ## EOF
