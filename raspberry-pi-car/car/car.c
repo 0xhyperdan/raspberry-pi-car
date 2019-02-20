@@ -8,38 +8,38 @@
 
 #include "car.h"
 
-int main(void) {
-    initCar();
-    char input;
-    for (;;) {
-        scanf("%c", &input);
-        printf("input commond :%c\n", input);
-        switch (input) {
-            case 'w': // forward
-                stop();
-                forward();
-                break;
-            case 'a': // left
-                stop();
-                left();
-                break;
-            case 'd': // right
-                stop();
-                right();
-                break;
-            case 's': // back
-                stop();
-                back();
-                break;
-            case 'p': // stop
-                stop();
-                break;
-            default:
-                break;
-        }
-    }
-    return 0;
-}
+//int main(void) {
+//    initCar();
+//    char input;
+//    for (;;) {
+//        scanf("%c", &input);
+//        printf("input commond :%c\n", input);
+//        switch (input) {
+//            case 'w': // forward
+//                stop();
+//                forward();
+//                break;
+//            case 'a': // left
+//                stop();
+//                left();
+//                break;
+//            case 'd': // right
+//                stop();
+//                right();
+//                break;
+//            case 's': // back
+//                stop();
+//                back();
+//                break;
+//            case 'p': // stop
+//                stop();
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//    return 0;
+//}
 
 void initCar(){
     printf("initCar\n");
