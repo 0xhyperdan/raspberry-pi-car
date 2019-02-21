@@ -37,6 +37,13 @@
 #ifndef car_h
 #define car_h
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <wiringPi.h>
+#include <softPwm.h>
+#include <termio.h>
+
+
 #define EN_A 4
 #define EN_B 5
 
@@ -51,12 +58,6 @@
 #define RIGHT 100
 #define STOP 32
 //#define EXIT 0
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <wiringPi.h>
-#include <softPwm.h>
-#include <termio.h>
 
 // 前进
 void forward(void);
@@ -74,4 +75,5 @@ void init_car(void);
 int scan_input(void);
 // 处理指令
 void do_commond(int commond);
+
 #endif /* car_h */
