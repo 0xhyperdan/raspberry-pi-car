@@ -70,7 +70,10 @@ void right(void);
 // 停车
 void stop(void);
 // 初始化
-void initCar(void);
+void init_car(void);
 
 // 键盘监听
-int scanInput(void);
+int scan_input(void);
+
+// 处理指令
+void do_commond(int commond);

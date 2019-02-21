@@ -9,40 +9,17 @@
 #include "car.h"
 
 int main(void) {
-    initCar();
+    init_car();
     int input;
     for (;;) {
-        input = scanInput();
+        input = scan_input();
         printf("input commond :%c\n", input);
-        switch (input) {
-            case FORWARD: // forward
-                stop();
-                forward();
-                break;
-            case LEFT: // left
-                stop();
-                left();
-                break;
-            case RIGHT: // right
-                stop();
-                right();
-                break;
-            case BACK: // back
-                stop();
-                back();
-                break;
-            case STOP: // stop
-                stop();
-                break;
-            default:
-                stop();
-                break;
-        }
+        do_commond(input);
     }
     return 0;
 }
 
-void initCar(){
+void init_car(){
     printf("initCar\n");
     wiringPiSetup();
     
@@ -126,7 +103,7 @@ void stop(){
     digitalWrite(IN_4, LOW);
 }
 
-int scanInput(){
+int scan_input(){
     int in;
     struct termios new_settings;
     struct termios stored_settings;
@@ -142,4 +119,31 @@ int scanInput(){
     
     tcsetattr(0, TCSANOW, &stored_settings);
     return in;
+}
+
+void do_commond(int commond){
+    switch (commond) {
+        case FORWARD: // forward
+            stop();
+            forward();
+            break;
+        case LEFT: // left
+            stop();
+            left();
+            break;
+        case RIGHT: // right
+            stop();
+            right();
+            break;
+        case BACK: // back
+            stop();
+            back();
+            break;
+        case STOP: // stop
+            stop();
+            break;
+        default:
+            stop();
+            break;
+    }
 }

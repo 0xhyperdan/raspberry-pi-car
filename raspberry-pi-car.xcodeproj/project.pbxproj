@@ -79,7 +79,7 @@
 		96B98E3A221B887900D17C35 /* raspberry-pi-car */ = {
 			isa = PBXGroup;
 			children = (
-				96F6B6F8221D869900424D91 /* net */,
+				96F6B6F8221D869900424D91 /* server */,
 				96F6B6F7221D866000424D91 /* car */,
 			);
 			path = "raspberry-pi-car";
@@ -94,12 +94,12 @@
 			path = car;
 			sourceTree = "<group>";
 		};
-		96F6B6F8221D869900424D91 /* net */ = {
+		96F6B6F8221D869900424D91 /* server */ = {
 			isa = PBXGroup;
 			children = (
 				96F6B706221D8A8600424D91 /* server.c */,
 			);
-			path = net;
+			path = server;
 			sourceTree = "<group>";
 		};
 		96F6B702221D881500424D91 /* Products */ = {
