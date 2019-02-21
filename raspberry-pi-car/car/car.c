@@ -8,16 +8,16 @@
 
 #include "car.h"
 
-int main(void) {
-    init_car();
-    int input;
-    for (;;) {
-        input = scan_input();
-        printf("input commond :%c\n", input);
-        do_commond(input);
-    }
-    return 0;
-}
+//int main(void) {
+//    init_car();
+//    int input;
+//    for (;;) {
+//        input = scan_input();
+//        printf("input commond :%c\n", input);
+//        do_commond(input);
+//    }
+//    return 0;
+//}
 
 void init_car(){
     printf("initCar\n");
