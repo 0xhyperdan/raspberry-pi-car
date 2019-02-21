@@ -4,12 +4,10 @@
 //
 //  Created by 丛晓丹 on 2018/9/30.
 //
-#include <stdio.h>
 #include <sys/socket.h>
 #include "../car/car.h"
 #include <arpa/inet.h>
 #include <unistd.h>
-#include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
 

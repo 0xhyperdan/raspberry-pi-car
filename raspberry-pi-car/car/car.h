@@ -59,6 +59,8 @@
 #define STOP 32
 //#define EXIT 0
 
+#endif /* car_h */
+
 // 前进
 void forward(void);
 // 倒车
@@ -75,5 +77,3 @@ void init_car(void);
 int scan_input(void);
 // 处理指令
 void do_commond(int commond);
-
-#endif /* car_h */
