@@ -58,7 +58,6 @@
 #include <softPwm.h>
 #include <termio.h>
 
-#endif /* car_h */
 // 前进
 void forward(void);
 // 倒车
@@ -71,9 +70,8 @@ void right(void);
 void stop(void);
 // 初始化
 void init_car(void);
-
 // 键盘监听
 int scan_input(void);
-
 // 处理指令
 void do_commond(int commond);
+#endif /* car_h */
