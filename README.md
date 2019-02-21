@@ -20,12 +20,10 @@
 ## Build android client control with socket
 
 1. git clone this repo
-2. cd project dir  `raspberry-pi-car/respberry-pi-car/car/*`
-3. run commond  `gcc -c car.c -lwiringPi -lpthread`
-4. cd project dir  `raspberry-pi-car/raspberry-pi-car/server/* `
-5. run commond `gcc -o server server.c ../car/car.o -lwiringPi -lpthread`
-6. run commond  `sudo ./server`
-7. socket send  commond to server 'w' = forward、's' = back 、'a' = left 、 'd' = right 、 'space' or 'other' = stop , ANSI code control car.
+2. cd project dir  `raspberry-pi-car/raspberry-pi-car/server/* `
+3. run commond `gcc -o server server.c ../car/car.c -lwiringPi -lpthread`
+4. run commond  `sudo ./server`
+5. socket send  commond to server 'w' = forward、's' = back 、'a' = left 、 'd' = right 、 'space' or 'other' = stop , ANSI code control car.
 
 * NOTE: your raspberry pi has the wiringPi library installed.
 
