@@ -157,43 +157,26 @@ float ultrasonic_distance(){
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
     delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
-    float time = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
-    float distance = time/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
+//    float time = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
+//    float distance = time/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
     // X秒=（ 2*Y米）/344 ==》X秒=0.0058*Y米 ==》厘米=微秒/58
     // 测得距离(单位:m)  =  (pulse_end - pulse_start) * 声波速度 / 2
+    for(;;) {
+        if (digitalRead (ULTRASONIC_ECHO) == 1) {
+            gettimeofday(&tv,&tz);
+            break;
+        }
+    }
+    for(;;) {
+        if (digitalRead (ULTRASONIC_ECHO) == 0) {
+            gettimeofday(&tve,&tz);
+            break;
+        }
+    }
+    
+    float usec;
+    usec = tve.tv_usec – tv.tv_usec;
+    float distance = usec/58; //Distance = ((Duration of high level)*(Sonic :340m/s))/2
     printf("distance-> %f cm\n", distance);
     return distance;
-}
-
-int pulseIn(int pin, int level, int timeout){
-    struct timeval tn, t0, t1;
-    
-    long micros;
-    
-    micros = 0;
-    
-    while (digitalRead(pin) != level){
-        gettimeofday(&tn, NULL);
-        
-        if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
-        micros += (tn.tv_usec - t0.tv_usec);
-        
-        if (micros > timeout) return 0;
-    }
-    
-    gettimeofday(&t1, NULL);
-    
-    while (digitalRead(pin) == level){
-        gettimeofday(&tn, NULL);
-        
-        if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
-        micros = micros + (tn.tv_usec - t0.tv_usec);
-        
-        if (micros > timeout) return 0;
-    }
-    
-    if (tn.tv_sec > t1.tv_sec) micros = 1000000L; else micros = 0;
-    micros = micros + (tn.tv_usec - t1.tv_usec);
-    
-    return micros;
 }
