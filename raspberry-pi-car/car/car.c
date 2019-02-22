@@ -170,8 +170,6 @@ int pulseIn(int pin, int level, int timeout){
     
     long micros;
     
-    gettimeofday(&t0, NULL);
-    
     micros = 0;
     
     while (digitalRead(pin) != level){
