@@ -151,19 +151,25 @@ void do_commond(int commond){
     }
 }
 
-int ultrasonic_distance(){
+double ultrasonic_distance(){
+    double distance;
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
     delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
-    int pulse_start = micros();
-    int pluse_end = micros();
-    while (digitalRead(ULTRASONIC_ECHO) == LOW);
-    // 等待低电平结束，记录时间
-    long start = micros();
-    while (digitalRead(ULTRASONIC_ECHO) == HIGH);
-    // 等待高电平结束，记录时间
-    int time_elapsed = micros() - start;
-    int distance = time_elapsed / 58;
-    printf("distance: %f cm\n", distance);
+    unsigned int echo_start = millis();
+    while(digitalRead(ULTRASONIC_ECHO) == LOW && millis() - echo_start < 1000);
+    // 等待低电平结束
+    if (millis() - echo_start < 1000) {
+        unsigned int start = micros();
+        // 等待高电平结束
+        while(digitalRead(ULTRASONIC_ECHO) == HIGH);
+        unsigned int end = micros();
+        unsigned int delta = end - start;
+        // 声波速度取 340.29m/s   34029cm/s
+        // 测得距离(单位:m)  =  delta * 声波速度 / 2
+        // 测得距离(单位:cm)  =  delta * 声波速度 / 2 * 100
+        distance = 34029 * delta / 2000000.0;
+        printf("distance: %f cm\n", distance);
+    }
     return distance;
 }

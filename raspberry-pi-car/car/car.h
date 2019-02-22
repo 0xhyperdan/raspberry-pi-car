@@ -78,5 +78,5 @@ int scan_input(void);
 // 处理指令
 void do_commond(int commond);
 // 超声波测距
-int ultrasonic_distance(void);
+double ultrasonic_distance(void);
 #endif
