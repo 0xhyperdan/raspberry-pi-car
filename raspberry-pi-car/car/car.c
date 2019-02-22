@@ -152,6 +152,7 @@ void do_commond(int commond){
 }
 
 int ultrasonic_distance(){
+    delay(30);
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
     delayMicroseconds(20); // 给触发脚高电平20μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
