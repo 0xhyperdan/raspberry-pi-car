@@ -152,8 +152,6 @@ void do_commond(int commond){
 }
 
 float ultrasonic_distance(){
-    struct timeval tv,tve;
-    struct timezone tz;
     digitalWrite(ULTRASONIC_TRIGGER, LOW);   // 给触发脚低电平2μs
     delayMicroseconds(2);
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
