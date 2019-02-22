@@ -152,12 +152,11 @@ void do_commond(int commond){
 }
 
 int ultrasonic_distance(){
-    delay(30);
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
-    delayMicroseconds(20); // 给触发脚高电平20μs，这里至少是10μs
+    delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
-    unsigned int pulse_start = micros();
-    unsigned int pluse_end = micros();
+    int pulse_start = micros();
+    int pluse_end = micros();
     while (digitalRead(ULTRASONIC_ECHO) == LOW);
     // 等待低电平结束，记录时间
     long start = micros();
