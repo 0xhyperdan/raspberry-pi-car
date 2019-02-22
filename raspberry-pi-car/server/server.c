@@ -49,6 +49,7 @@ void init_socket(){
     addr_size = sizeof serverStorage;
     
     for (;;) {
+        ultrasonic_distance();
         /*---- Accept call creates a new socket for the incoming connection ----*/
         ret = accept(soc, (struct sockaddr *) &serverStorage, &addr_size);
         //printf("socket:%d  ret:%d\n", soc, ret);

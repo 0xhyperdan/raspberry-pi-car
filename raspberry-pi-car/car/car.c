@@ -22,7 +22,9 @@
 void init_car(){
     printf("initCar\n");
     wiringPiSetup();
-    
+    // 超声波
+    pinMode(ULTRASONIC_TRIGGER, OUTPUT);
+    pinMode(ULTRASONIC_ECHO, INPUT);
     // L298N PWM
     softPwmCreate (EN_A ,0, 100);
     softPwmCreate (EN_B ,0, 100);
@@ -146,4 +148,17 @@ void do_commond(int commond){
             stop();
             break;
     }
+}
+
+float ultrasonic_distance(){
+    digitalWrite(ULTRASONIC_TRIGGER, LOW);   // 给触发脚低电平2μs
+    delayMicroseconds(2);
+    digitalWrite(ULTRASONIC_TRIGGER, HIGH);
+    delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
+    digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
+    float distance = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
+    distance= distance/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
+    // X秒=（ 2*Y米）/344 ==》X秒=0.0058*Y米 ==》厘米=微秒/58
+    printf("distance-> %f cm\n", distance);
+    return distance;
 }

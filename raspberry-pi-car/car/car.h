@@ -51,6 +51,10 @@
 #define IN_3 2
 #define IN_4 3
 
+#define ULTRASONIC_TRIGGER 28
+#define ULTRASONIC_ECHO 29
+#define ULTRASONIC_GEAR 25
+
 #define FORWARD 119
 #define BACK 115
 #define LEFT 97
@@ -73,6 +77,6 @@ void init_car(void);
 int scan_input(void);
 // 处理指令
 void do_commond(int commond);
-
-
+// 超声波测距
+float ultrasonic_distance(void);
 #endif
