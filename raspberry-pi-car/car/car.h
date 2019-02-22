@@ -80,5 +80,5 @@ void do_commond(int commond);
 // 超声波测距
 float ultrasonic_distance(void);
 // 读值
-int pulseIn(int pin, int level, int timeout)；
+int pulseIn(int pin, int level, int timeout);
 #endif

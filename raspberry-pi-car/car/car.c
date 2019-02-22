@@ -174,8 +174,7 @@ int pulseIn(int pin, int level, int timeout){
     
     micros = 0;
     
-    while (digitalRead(pin) != level)
-    {
+    while (digitalRead(pin) != level){
         gettimeofday(&tn, NULL);
         
         if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
@@ -186,8 +185,7 @@ int pulseIn(int pin, int level, int timeout){
     
     gettimeofday(&t1, NULL);
     
-    while (digitalRead(pin) == level)
-    {
+    while (digitalRead(pin) == level){
         gettimeofday(&tn, NULL);
         
         if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
