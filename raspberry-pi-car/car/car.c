@@ -157,21 +157,20 @@ float ultrasonic_distance(){
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
     delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
-    unsigned int echo_start = millis();
-    while (digitalRead(ULTRASONIC_ECHO) == LOW && millis()-echo_start < 1000) {
-        
+    unsigned int pulse_start = micros();
+    unsigned int pluse_end = micros();
+    while (digitalRead(ULTRASONIC_ECHO) == LOW) {
+        // 等待低电平结束，记录时间
     }
-    float distance;
-    if (millis() - echo_start < 1000) {
-        unsigned int start = micros();
-        while (digitalRead(ULTRASONIC_ECHO) == HIGH) {
-            
-        }
-        unsigned int end = micros();
-        unsigned int delta = end-start;
-        
-        distance = 34029 * delta / 2000000.0;
-        printf("Distance: %f\n CM", distance);
+    // 记录发送时间
+    pulse_start = micros();
+    while (digitalRead(ULTRASONIC_ECHO) == HIGH) {
+        // 等待高电平结束，记录时间
     }
+    pluse_end = micros();
+    int time_elapsed = pluse_end-pulse_start;
+    // # 声波的速度为 343m/s， 转化为 34300cm/s。
+    float distance = 34300 * time_elapsed / 2;
+    printf("distance: %fCM\n", distance);
     return distance;
 }
