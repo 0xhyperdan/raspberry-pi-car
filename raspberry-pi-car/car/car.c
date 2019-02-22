@@ -157,8 +157,8 @@ float ultrasonic_distance(){
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
     delayMicroseconds(10); // 给触发脚高电平10μs，这里至少是10μs
     digitalWrite(ULTRASONIC_TRIGGER, LOW);    // 持续给触发脚低电
-    float distance = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
-    distance= distance/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
+    float time = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
+    float distance = time/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
     // X秒=（ 2*Y米）/344 ==》X秒=0.0058*Y米 ==》厘米=微秒/58
     // 测得距离(单位:m)  =  (pulse_end - pulse_start) * 声波速度 / 2
     printf("distance-> %f cm\n", distance);
