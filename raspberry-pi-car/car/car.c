@@ -152,6 +152,8 @@ void do_commond(int commond){
 }
 
 float ultrasonic_distance(){
+    struct timeval tv,tve;
+    struct timezone tz;
     digitalWrite(ULTRASONIC_TRIGGER, LOW);   // 给触发脚低电平2μs
     delayMicroseconds(2);
     digitalWrite(ULTRASONIC_TRIGGER, HIGH);
@@ -175,7 +177,7 @@ float ultrasonic_distance(){
     }
     
     float usec;
-    usec = tve.tv_usec – tv.tv_usec;
+    usec = tve.tv_usec-tv.tv_usec;
     float distance = usec/58; //Distance = ((Duration of high level)*(Sonic :340m/s))/2
     printf("distance-> %f cm\n", distance);
     return distance;
