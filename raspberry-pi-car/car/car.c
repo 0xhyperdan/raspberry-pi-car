@@ -25,6 +25,7 @@ void init_car(){
     // 超声波
     pinMode(ULTRASONIC_TRIGGER, OUTPUT);
     pinMode(ULTRASONIC_ECHO, INPUT);
+    pinMode(ULTRASONIC_GEAR, OUTPUT);
     // L298N PWM
     softPwmCreate (EN_A ,0, 100);
     softPwmCreate (EN_B ,0, 100);
@@ -159,6 +160,44 @@ float ultrasonic_distance(){
     float distance = pulseIn(ULTRASONIC_ECHO, HIGH);  // 读取高电平时间(单位：微秒)
     distance= distance/58;       //为什么除以58等于厘米，  Y米=（X秒*344）/2
     // X秒=（ 2*Y米）/344 ==》X秒=0.0058*Y米 ==》厘米=微秒/58
+    // 测得距离(单位:m)  =  (pulse_end - pulse_start) * 声波速度 / 2
     printf("distance-> %f cm\n", distance);
     return distance;
+}
+
+int pulseIn(int pin, int level, int timeout){
+    struct timeval tn, t0, t1;
+    
+    long micros;
+    
+    gettimeofday(&t0, NULL);
+    
+    micros = 0;
+    
+    while (digitalRead(pin) != level)
+    {
+        gettimeofday(&tn, NULL);
+        
+        if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
+        micros += (tn.tv_usec - t0.tv_usec);
+        
+        if (micros > timeout) return 0;
+    }
+    
+    gettimeofday(&t1, NULL);
+    
+    while (digitalRead(pin) == level)
+    {
+        gettimeofday(&tn, NULL);
+        
+        if (tn.tv_sec > t0.tv_sec) micros = 1000000L; else micros = 0;
+        micros = micros + (tn.tv_usec - t0.tv_usec);
+        
+        if (micros > timeout) return 0;
+    }
+    
+    if (tn.tv_sec > t1.tv_sec) micros = 1000000L; else micros = 0;
+    micros = micros + (tn.tv_usec - t1.tv_usec);
+    
+    return micros;
 }
