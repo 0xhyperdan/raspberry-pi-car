@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		96B98E3C221B887900D17C35 /* car.c in Sources */ = {isa = PBXBuildFile; fileRef = 96B98E3B221B887900D17C35 /* car.c */; };
 		96F6B707221D8A8600424D91 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 96F6B706221D8A8600424D91 /* server.c */; };
+		96F6B70D221FD00200424D91 /* liblib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98E47221B8AD200D17C35 /* liblib.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F6B70D221FD00200424D91 /* liblib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
