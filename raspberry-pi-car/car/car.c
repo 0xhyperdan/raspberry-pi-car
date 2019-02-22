@@ -170,7 +170,7 @@ float ultrasonic_distance(){
     pluse_end = micros();
     int time_elapsed = pluse_end-pulse_start;
     // # 声波的速度为 343m/s， 转化为 34300cm/s。
-    float distance = 34300 * time_elapsed / 2;
+    float distance = 34300 * time_elapsed / 2000000.0;
     printf("distance: %fCM\n", distance);
     return distance;
 }
