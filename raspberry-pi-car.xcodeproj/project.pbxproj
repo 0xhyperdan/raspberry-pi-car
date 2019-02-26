@@ -30,11 +30,11 @@
 		96B98E47221B8AD200D17C35 /* liblib.dylib */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.dylib"; path = liblib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98E4C221BF31900D17C35 /* car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 		96F6B6F1221C004C00424D91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		96F6B700221D880000424D91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = "raspberry-pi-car/.gitignore"; sourceTree = "<group>"; };
 		96F6B701221D881500424D91 /* raspberry-pi-car.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "raspberry-pi-car.xcodeproj"; sourceTree = "<group>"; };
 		96F6B706221D8A8600424D91 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
 		96F6B7102224D63600424D91 /* RaspberryCar.fzz */ = {isa = PBXFileReference; lastKnownFileType = file; path = RaspberryCar.fzz; sourceTree = "<group>"; };
 		96F6B7112224D63600424D91 /* RaspberryCar_bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaspberryCar_bb.png; sourceTree = "<group>"; };
+		96F6B7122224F84E00424D91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +59,9 @@
 		96B98E2F221B887900D17C35 = {
 			isa = PBXGroup;
 			children = (
+				96F6B7122224F84E00424D91 /* .gitignore */,
 				96F6B7112224D63600424D91 /* RaspberryCar_bb.png */,
 				96F6B7102224D63600424D91 /* RaspberryCar.fzz */,
-				96F6B700221D880000424D91 /* .gitignore */,
 				96F6B701221D881500424D91 /* raspberry-pi-car.xcodeproj */,
 				96F6B6F1221C004C00424D91 /* README.md */,
 				96B98E3A221B887900D17C35 /* raspberry-pi-car */,
